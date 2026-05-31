@@ -105,9 +105,9 @@ In a research context, however, this efficiency comes with a risk that is easy t
 
 In many professional contexts, code is the deliverable: if it works correctly and on time, the job is done.
 Research is different. Code in research is a \emph{means}, not an end.
-The real deliverable is a claim about the world---a finding, an inference, a methodological contribution---and that claim can only be as solid as the researcher's understanding of the pipeline that produced it.
+The real deliverable is framing and solving correctly a given problem, and the solution can only be as solid as the researcher's understanding of the pipeline that produced it.
 
-Consider what it actually means to \emph{not} have a mental model of your own analysis code:
+Consider what it actually means to \emph{not} have a full understanding of your own analysis code:
 
 \begin{itemize}
     \item You cannot defend your methodological choices, because you did not make them---you accepted them.
@@ -117,8 +117,9 @@ Consider what it actually means to \emph{not} have a mental model of your own an
 \end{itemize}
 
 \noindent Working code produced without understanding is not a research output. It is a liability.
+\pagebreak
 
-This is what \oq the mental model is the product\cq{} means in practice: \textbf{the understanding you build while writing the analysis is part of the scientific contribution itself}, not a side effect of it.
+\textbf{The understanding you build while writing the analysis is part of the scientific contribution itself}, not a side effect of it.
 Velocity optimised at the cost of that understanding is a net loss, regardless of how clean the final script looks.
 
 This guide does not argue against using LLMs. It argues for using them \emph{deliberately}.
@@ -127,20 +128,51 @@ This guide does not argue against using LLMs. It argues for using them \emph{del
 %% ─────────────────────────────────────────────
 \section{The Core Problem}
 
-Learning to code---and to solve problems computationally---relies on a cognitive loop:
+Learning to code---and to solve problems computationally---is a cognitive process that spans multiple levels of competence.
+Bloom's Taxonomy, a well-established framework in educational psychology, describes six levels of cognitive skill, ordered from the most superficial to the most demanding:
 
-\begin{center}
-\textbf{Predict} $\rightarrow$ \textbf{Observe} $\rightarrow$ \textbf{Update}
-\end{center}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small\bfseries]
+  % Level 0: Remember (widest, at bottom)
+  \filldraw[fill=blue!25, draw=white, line width=1.5pt]
+    (-3.00,0.00) -- (3.00,0.00) -- (2.65,0.72) -- (-2.65,0.72) -- cycle;
+  \node[black!70] at (0,0.36) {Remember};
+  % Level 1: Understand
+  \filldraw[fill=blue!55, draw=white, line width=1.5pt]
+    (-2.65,0.72) -- (2.65,0.72) -- (2.30,1.44) -- (-2.30,1.44) -- cycle;
+  \node[white] at (0,1.08) {Understand};
+  % Level 2: Apply
+  \filldraw[fill=teal!60, draw=white, line width=1.5pt]
+    (-2.30,1.44) -- (2.30,1.44) -- (1.95,2.16) -- (-1.95,2.16) -- cycle;
+  \node[white] at (0,1.80) {Apply};
+  % Level 3: Analyse
+  \filldraw[fill=yellow!80!orange, draw=white, line width=1.5pt]
+    (-1.95,2.16) -- (1.95,2.16) -- (1.60,2.88) -- (-1.60,2.88) -- cycle;
+  \node[black!80] at (0,2.52) {Analyse};
+  % Level 4: Evaluate
+  \filldraw[fill=orange!85, draw=white, line width=1.5pt]
+    (-1.60,2.88) -- (1.60,2.88) -- (1.25,3.60) -- (-1.25,3.60) -- cycle;
+  \node[white] at (0,3.24) {Evaluate};
+  % Level 5: Create (narrowest, at top)
+  \filldraw[fill=red!65, draw=white, line width=1.5pt]
+    (-1.25,3.60) -- (1.25,3.60) -- (0.90,4.32) -- (-0.90,4.32) -- cycle;
+  \node[white] at (0,3.96) {Create};
+\end{tikzpicture}
+\caption*{Bloom's Taxonomy of cognitive skills (bottom = most superficial, top = most demanding)}
+\end{figure}
 
-You form a hypothesis about how something works, you try it, and you revise your mental model based on what you observe.
-LLMs short-circuit this loop. When a working solution is handed to you before you have wrestled with the problem, the update step---the one that builds genuine understanding---is skipped.
+Genuine coding competence sits at the top: \textbf{Create}---the ability to design and produce solutions to novel problems.
+Reaching it requires building through the intermediate levels: understanding why code behaves as it does, applying principles in unfamiliar contexts, analysing trade-offs, evaluating correctness.
+
+LLMs disrupt this ladder. You don't create any working solution even if it may seem so. When a working solution is handed to you by LLM before you have wrestled with the problem, you interact with code at its lowest level---\textbf{Remember}: you recognise patterns, run scripts, adjust parameters, and produce outputs.
+This is not competence. It produces the illusion of competence.
 
 The risk differs depending on experience level:
 
 \begin{itemize}
-    \item \textbf{Experienced programmers} risk the gradual atrophy of problem-decomposition skills by outsourcing too much cognitive work. The skills do not disappear overnight, but they quietly erode.
-    \item \textbf{Junior researchers} risk mistaking familiarity for understanding. It is possible to operate a codebase fluently---running scripts, adjusting parameters, producing outputs---without having a mental model of what the code actually does. This is a fragile and dangerous position in science.
+    \item \textbf{Experienced programmers} risk the gradual atrophy of higher-order skills---analysis, evaluation, design. The capacity to Create does not disappear overnight, but it quietly erodes as cognitive work is increasingly outsourced.
+    \item \textbf{Junior researchers} risk becoming permanently anchored at Remember. Without ever climbing the intermediate levels of the taxonomy, there is no foundation on which genuine competence can develop. Familiarity with a codebase---running scripts, reading outputs---is not understanding it.
 \end{itemize}
 
 \begin{tcolorbox}[
@@ -153,7 +185,7 @@ The risk differs depending on experience level:
     title={\textbf{Key Principle}},
     fonttitle=\bfseries\color{white}
 ]
-All good practices described in this guide share one goal: \textbf{artificially reinstating the predict\,$\rightarrow$\,observe\,$\rightarrow$\,update loop} that LLMs tend to bypass.
+All good practices described in this guide share one goal: \textbf{pushing you up Bloom's Taxonomy}---away from the passive familiarity that LLMs enable, and toward the active competence that research demands.
 \end{tcolorbox}
 
 
@@ -194,6 +226,7 @@ If you cannot answer these questions, do not commit the code.
 \subsection{Design the algorithm first}
 
 For any problem that requires more than a few lines of logic, sketch the algorithm yourself before prompting. Use pseudocode, a diagram, or plain English. Then use the LLM to \emph{implement} your design, not to invent it.
+\pagebreak
 
 \mybox{
 \textbf{Pattern to avoid:} \emph{``Here is my data. Write me a function that does X.''}\\[4pt]
@@ -250,7 +283,7 @@ Over time, this journal becomes a record of your understanding growing.
 
 \subsection{Change one variable at a time when debugging}
 
-When something does not work, resist the temptation to ask the LLM to fix it immediately. First, form a hypothesis about what is wrong. Then change exactly one thing and observe the result. Only reach for the LLM after you have made at least one genuine attempt to diagnose the problem yourself.
+When something does not work, resist the temptation to ask the LLM to fix it immediately. Debugging is precisely where you practise the higher levels of Bloom's Taxonomy---Analyse and Evaluate---and those levels cannot be climbed by delegation. Form a hypothesis about what is wrong, change exactly one thing, and observe the result. Only reach for the LLM after you have made at least one genuine attempt to diagnose the problem yourself.
 
 \subsection{Decompose the problem yourself before prompting}
 
@@ -259,7 +292,7 @@ For any non-trivial task, write down the sub-problems before opening the LLM. Th
 
 %% ─────────────────────────────────────────────
 \section{Quick Reference}
-
+\footnotesize
 \begin{center}
 \begin{tabular}{p{0.44\textwidth} p{0.44\textwidth}}
 \toprule
@@ -283,9 +316,10 @@ Seek friction deliberately when learning & Keep a bug journal (focus on the \emp
 \end{center}
 
 \vspace{1em}
+\normalsize
 
 \mybox{
-\textbf{Shared principle for both groups:} Use the LLM to implement and to check---not to think in your place.
+\textbf{Shared principle for both groups:} \emph{Use the LLM to implement and to check, but not to think in your place}.
 The goal is not to avoid LLMs. The goal is to remain the author of your own understanding.
 }
 
