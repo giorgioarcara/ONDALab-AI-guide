@@ -22,7 +22,7 @@
 \usepackage{booktabs}
 \usepackage{tcolorbox}
 \usepackage{enumitem}
-\usepackage{babel}
+\usepackage[english]{babel}
 
 \setcounter{tocdepth}{2}
 \setlength{\abovecaptionskip}{25pt plus 3pt minus 2pt}
@@ -83,11 +83,23 @@
 \newpage
 
 \thispagestyle{empty}
+{
+\centering
+\emph{“How we spend our days is, of course, how we spend our lives.”} \\
+― Annie Dillard, ``The Writing Life''
+
+\vfill
+\emph{"In every animal... a more frequent and continuous use of any organ gradually strengthens, develops and enlarges that organ... while the permanent disuse of any organ imperceptibly weakens and deteriorates it..."\\}
+― Carl Lamarck, ``Zoological Philosophy''
+
+
+}
+
 \vspace*{\fill}
 \begin{figure}[H]
-    \centering
+\centering
     \includegraphics[width=0.65\textwidth]{Figures/AGC_chisafare.jpg}
-    \caption*{\textit{``Chi sa fare, sa capire.''} --- Non è un proverbio. È la vita.}
+    \caption*{\textit{Aldo, Giovanni e Giacomo, ``Chiedimi se sono Felice''}}
 \end{figure}
 \vspace*{\fill}
 \newpage
@@ -288,6 +300,26 @@ When something does not work, resist the temptation to ask the LLM to fix it imm
 \subsection{Decompose the problem yourself before prompting}
 
 For any non-trivial task, write down the sub-problems before opening the LLM. This does not need to be formal---a rough bullet list is enough. The act of decomposition is where much of the learning happens, and it is precisely what gets skipped when you prompt immediately.
+
+
+\section{Using LLM and privacy}
+Using LLM for data analysis is at risk of \emph{data breach}, and this should not be taken as a irrelevant.
+
+\begin{tcolorbox}[
+    colback=red!5,
+    colframe=red!70!black,
+    boxrule=1pt,
+    leftrule=4pt,
+    arc=2pt,
+    colbacktitle=red!70!black,
+    title={\textbf{Key Principle}},
+    fonttitle=\bfseries\color{white}
+]
+Never, ever, upload your data to an LLM to do the analysis or to help you solving a problem.
+\end{tcolorbox}
+
+If you do this, please consider you just commited a \emph{data breach}.
+
 
 
 %% ─────────────────────────────────────────────
