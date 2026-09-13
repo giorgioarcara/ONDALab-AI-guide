@@ -1,0 +1,18 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}The Core Problem}{4}{section.2}%
+\contentsline {section}{\numberline {3}Define the Problem First}{5}{section.3}%
+\contentsline {section}{\numberline {4}Practices for Experienced Programmers}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Trace before you accept}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Design the algorithm first}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Periodically code without LLM assistance}{7}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Seek friction deliberately}{7}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Practices for Junior Researchers}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Blank-page reconstruction}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Inverted rubber duck}{7}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Write tests before asking for code}{8}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Keep a bug journal}{8}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Change one variable at a time when debugging}{8}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Decompose the problem yourself before prompting}{8}{subsection.5.6}%
+\contentsline {section}{\numberline {6}Using LLM and privacy}{9}{section.6}%
+\contentsline {section}{\numberline {7}Quick Reference}{9}{section.7}%
